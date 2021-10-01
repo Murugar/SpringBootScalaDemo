@@ -20,7 +20,7 @@ class UserController(@Autowired private val userService: UserService) {
   
   @GetMapping(path = Array("/users/{id}"))
   def getUser(@PathVariable id: Long): Users = {
-    userService.getUser(id)
+    userService.getUser(id).get()
   }
 
   @PostMapping(path = Array("/users"))
